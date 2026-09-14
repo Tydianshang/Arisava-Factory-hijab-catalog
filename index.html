@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<meta name="theme-color" content="#FBF7EE" media="(prefers-color-scheme: light)" />
-<meta name="theme-color" content="#1A1209" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="#FDF9F7" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#2A1A1B" media="(prefers-color-scheme: dark)" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 <meta name="format-detection" content="telephone=no" />
@@ -21,16 +21,16 @@
 <!-- ExcelJS lazy loaded only when user opens basket export (saves ~900KB on first paint) -->
 <style>
 :root{
-  --gold:#C9A84C;
-  --gold-dark:#A8862E;
-  --cream:#F8F3E8;
-  --cream-dark:#EDE4CE;
-  --brown:#3D2B1F;
-  --brown-light:#6B4F3F;
-  --blue:#1B4F72;
-  --white:#FFFEFB;
-  --shadow:0 10px 40px rgba(61,43,31,0.08);
-  --shadow-hover:0 20px 60px rgba(61,43,31,0.15);
+  --gold:#B5828C;
+  --gold-dark:#8E6169;
+  --cream:#FAF3F0;
+  --cream-dark:#F3E4DF;
+  --brown:#4A2E30;
+  --brown-light:#7A5458;
+  --blue:#8E6169;
+  --white:#FFFDFB;
+  --shadow:0 10px 40px rgba(74,46,48,0.08);
+  --shadow-hover:0 20px 60px rgba(74,46,48,0.15);
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
@@ -47,25 +47,25 @@ body{
   line-height:1.6;
   overflow-x:hidden;
   background-image:
-    radial-gradient(circle at 20% 10%,rgba(201,168,76,0.06) 0%,transparent 50%),
-    radial-gradient(circle at 80% 60%,rgba(27,79,114,0.04) 0%,transparent 50%);
+    radial-gradient(circle at 20% 10%,rgba(181,130,140,0.06) 0%,transparent 50%),
+    radial-gradient(circle at 80% 60%,rgba(142,97,105,0.04) 0%,transparent 50%);
 }
 
 /* === Geometric Pattern Background === */
 .geo-bg{
   position:fixed;top:0;left:0;width:100%;height:100%;
   pointer-events:none;z-index:0;opacity:0.04;
-  background-image:url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23C9A84C' d='M40 0L50 30L80 40L50 50L40 80L30 50L0 40L30 30z'/%3E%3C/svg%3E");
+  background-image:url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23B5828C' d='M40 0L50 30L80 40L50 50L40 80L30 50L0 40L30 30z'/%3E%3C/svg%3E");
 }
 
 /* === Top Bar (luxury black + gold) === */
 .topbar{
-  background:#0E0A06;
-  color:rgba(248,243,232,0.85);
+  background:#2A1A1B;
+  color:rgba(250,243,240,0.85);
   padding:10px 0;font-size:12px;
   letter-spacing:0.6px;
   position:relative;z-index:10;
-  border-bottom:1px solid rgba(201,168,76,0.15);
+  border-bottom:1px solid rgba(181,130,140,0.15);
 }
 .topbar-inner{
   max-width:1400px;margin:0 auto;padding:0 28px;
@@ -74,7 +74,7 @@ body{
 .topbar-left{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
 .topbar-left span.dot{color:var(--gold);opacity:0.55}
 .topbar a{color:var(--gold);text-decoration:none;margin-left:20px;transition:color .25s;font-weight:500}
-.topbar a:hover{color:#F4E0A1}
+.topbar a:hover{color:#E8C4C4}
 
 /* === Header (sticky, glass, serif brand) === */
 header{
@@ -82,9 +82,9 @@ header{
   backdrop-filter:saturate(140%) blur(14px);
   -webkit-backdrop-filter:saturate(140%) blur(14px);
   padding:18px 0;
-  border-bottom:1px solid rgba(201,168,76,0.18);
+  border-bottom:1px solid rgba(181,130,140,0.18);
   position:sticky;top:0;z-index:100;
-  box-shadow:0 1px 0 rgba(61,43,31,0.04), 0 8px 24px -16px rgba(61,43,31,0.12);
+  box-shadow:0 1px 0 rgba(74,46,48,0.04), 0 8px 24px -16px rgba(74,46,48,0.12);
 }
 .header-inner{
   max-width:1400px;margin:0 auto;padding:0 28px;
@@ -94,15 +94,15 @@ header{
 .brand-logo{
   position:relative;
   width:54px;height:54px;border-radius:50%;
-  background:radial-gradient(circle at 30% 25%,#F2DA92 0%,var(--gold) 38%,var(--gold-dark) 100%);
+  background:radial-gradient(circle at 30% 25%,#E8C4C4 0%,var(--gold) 38%,var(--gold-dark) 100%);
   display:flex;align-items:center;justify-content:center;
-  color:#FFFEFB;font-family:'Playfair Display',serif;font-size:28px;font-weight:700;
+  color:#FFFDFB;font-family:'Playfair Display',serif;font-size:28px;font-weight:700;
   font-style:italic;
-  box-shadow:0 6px 20px rgba(168,134,46,0.35), inset 0 0 0 1px rgba(255,255,255,0.25);
+  box-shadow:0 6px 20px rgba(142,97,105,0.35), inset 0 0 0 1px rgba(255,255,255,0.25);
 }
 .brand-logo::before{
   content:"";position:absolute;inset:-5px;border-radius:50%;
-  border:1px solid rgba(201,168,76,0.45);
+  border:1px solid rgba(181,130,140,0.45);
   pointer-events:none;
 }
 .brand-text h1{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;line-height:1.05;letter-spacing:0.2px}
@@ -110,9 +110,9 @@ header{
 
 .header-actions{display:flex;gap:12px;align-items:center}
 .btn-quote{
-  background:linear-gradient(135deg,#1A1209 0%,#3D2B1F 100%);
+  background:linear-gradient(135deg,#2A1A1B 0%,#4A2E30 100%);
   color:var(--gold);
-  border:1px solid rgba(201,168,76,0.5);
+  border:1px solid rgba(181,130,140,0.5);
   padding:11px 22px;border-radius:30px;
   font-size:13px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;cursor:pointer;
   display:flex;align-items:center;gap:10px;
@@ -122,18 +122,18 @@ header{
 .btn-quote:hover{
   transform:translateY(-2px);
   background:linear-gradient(135deg,var(--gold) 0%,var(--gold-dark) 100%);
-  color:#1A1209;
+  color:#2A1A1B;
   border-color:var(--gold);
-  box-shadow:0 10px 24px rgba(201,168,76,0.35);
+  box-shadow:0 10px 24px rgba(181,130,140,0.35);
 }
 .quote-badge{
-  background:var(--gold);color:#1A1209;
+  background:var(--gold);color:#2A1A1B;
   border-radius:50%;width:22px;height:22px;
   display:flex;align-items:center;justify-content:center;
   font-size:12px;font-weight:700;
   transition:all 0.3s;
 }
-.btn-quote:hover .quote-badge{background:#1A1209;color:var(--gold)}
+.btn-quote:hover .quote-badge{background:#2A1A1B;color:var(--gold)}
 
 /* === Hero (full-bleed cinematic background image) === */
 .hero{
@@ -141,17 +141,17 @@ header{
   min-height:88vh;
   display:flex;align-items:center;
   background:
-    linear-gradient(95deg, rgba(15,10,6,0.78) 0%, rgba(26,18,9,0.55) 38%, rgba(0,0,0,0.18) 58%, rgba(0,0,0,0) 75%),
+    linear-gradient(95deg, rgba(42,26,27,0.78) 0%, rgba(42,26,27,0.55) 38%, rgba(0,0,0,0.18) 58%, rgba(0,0,0,0) 75%),
     linear-gradient(180deg, rgba(0,0,0,0.15) 0%, transparent 30%, rgba(0,0,0,0.45) 100%),
     url('images/hero/courtyard-hero.jpg') center 30% / cover no-repeat;
-  color:#FBF7EE;
+  color:#FDF9F7;
   overflow:hidden;
   z-index:1;
 }
 .hero::after{
   /* subtle warm gold haze in upper-left to lift mood */
   content:"";position:absolute;inset:0;
-  background:radial-gradient(ellipse 60% 60% at 12% 18%, rgba(244,224,161,0.10), transparent 60%);
+  background:radial-gradient(ellipse 60% 60% at 12% 18%, rgba(232,196,196,0.10), transparent 60%);
   pointer-events:none;
 }
 .hero-inner{
@@ -169,13 +169,13 @@ header{
 .hero-eyebrow{
   display:inline-flex;align-items:center;gap:14px;
   font-size:11px;letter-spacing:4px;text-transform:uppercase;
-  color:#F4E0A1;font-weight:600;
+  color:#E8C4C4;font-weight:600;
   margin-bottom:22px;
   text-shadow:0 2px 12px rgba(0,0,0,0.5);
 }
-.hero-eyebrow .line{width:34px;height:1px;background:#F4E0A1;opacity:0.7}
+.hero-eyebrow .line{width:34px;height:1px;background:#E8C4C4;opacity:0.7}
 .hero-arabic{
-  font-family:'Amiri',serif;font-size:32px;color:#F4E0A1;
+  font-family:'Amiri',serif;font-size:32px;color:#E8C4C4;
   margin-bottom:8px;opacity:0.95;letter-spacing:1.5px;
   line-height:1;
   text-shadow:0 2px 18px rgba(0,0,0,0.6);
@@ -184,13 +184,13 @@ header{
   font-family:'Playfair Display',serif;
   font-size:clamp(42px,5vw,72px);
   font-weight:600;line-height:1.04;
-  color:#FBF7EE;
+  color:#FDF9F7;
   margin:14px 0 22px;
   letter-spacing:-0.8px;
   text-shadow:0 3px 24px rgba(0,0,0,0.55);
 }
 .hero h2 .gold{
-  background:linear-gradient(135deg,#F4E0A1 0%,#E5C770 50%,#C9A84C 100%);
+  background:linear-gradient(135deg,#E8C4C4 0%,#C79AA0 50%,#B5828C 100%);
   -webkit-background-clip:text;background-clip:text;
   -webkit-text-fill-color:transparent;
   font-style:italic;font-weight:500;
@@ -199,12 +199,12 @@ header{
 }
 .hero h2 .gold::after{
   content:"";display:block;width:100px;height:1px;
-  background:linear-gradient(90deg,#F4E0A1,transparent);
+  background:linear-gradient(90deg,#E8C4C4,transparent);
   margin-top:18px;
   -webkit-text-fill-color:initial;
 }
 .hero p.subtitle{
-  font-size:16.5px;color:rgba(251,247,238,0.92);
+  font-size:16.5px;color:rgba(253,249,247,0.92);
   max-width:540px;margin:0 0 36px;
   line-height:1.75;font-weight:400;
   text-shadow:0 2px 10px rgba(0,0,0,0.5);
@@ -213,24 +213,24 @@ header{
 .hero-stats{
   display:flex;gap:0;flex-wrap:wrap;
   margin-top:40px;
-  border-top:1px solid rgba(244,224,161,0.32);
-  border-bottom:1px solid rgba(244,224,161,0.32);
+  border-top:1px solid rgba(232,196,196,0.32);
+  border-bottom:1px solid rgba(232,196,196,0.32);
   padding:22px 0;
 }
 .stat{
   padding:0 28px 0 0;
-  border-right:1px solid rgba(244,224,161,0.22);
+  border-right:1px solid rgba(232,196,196,0.22);
   min-width:100px;
   margin-right:28px;
 }
 .stat:last-child{border-right:none;margin-right:0;padding-right:0}
 .stat-num{
   font-family:'Playfair Display',serif;font-size:36px;
-  color:#F4E0A1;font-weight:700;line-height:1;
+  color:#E8C4C4;font-weight:700;line-height:1;
   text-shadow:0 2px 12px rgba(0,0,0,0.5);
 }
 .stat-label{
-  font-size:10px;color:rgba(251,247,238,0.75);
+  font-size:10px;color:rgba(253,249,247,0.75);
   text-transform:uppercase;letter-spacing:2.2px;margin-top:8px;font-weight:600;
 }
 
@@ -249,24 +249,24 @@ header{
   font-size:13px;font-weight:600;text-transform:uppercase;
 }
 .channel-primary{
-  background:linear-gradient(135deg,#F4E0A1 0%,#C9A84C 100%);
-  color:#1A1209;
-  box-shadow:0 10px 28px rgba(201,168,76,0.40);
-  border:1px solid #F4E0A1;
+  background:linear-gradient(135deg,#E8C4C4 0%,#B5828C 100%);
+  color:#2A1A1B;
+  box-shadow:0 10px 28px rgba(181,130,140,0.40);
+  border:1px solid #E8C4C4;
 }
 .channel-primary:hover{
   transform:translateY(-2px);
-  box-shadow:0 16px 36px rgba(201,168,76,0.55);
+  box-shadow:0 16px 36px rgba(181,130,140,0.55);
 }
 .channel-secondary{
   background:rgba(255,255,255,0.06);
-  color:#FBF7EE;
-  border:1px solid rgba(251,247,238,0.55);
+  color:#FDF9F7;
+  border:1px solid rgba(253,249,247,0.55);
   backdrop-filter:blur(6px);
   -webkit-backdrop-filter:blur(6px);
 }
 .channel-secondary:hover{
-  background:#FBF7EE;color:#1A1209;border-color:#FBF7EE;
+  background:#FDF9F7;color:#2A1A1B;border-color:#FDF9F7;
 }
 .ch-text{display:flex;flex-direction:column;line-height:1.2;text-transform:none}
 .ch-text strong{font-size:13px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase}
@@ -279,7 +279,7 @@ header{
   .hero::before{
     /* on smaller screens add a stronger overall dark veil so text reads */
     content:"";position:absolute;inset:0;
-    background:linear-gradient(180deg, rgba(15,10,6,0.55) 0%, rgba(15,10,6,0.55) 100%);
+    background:linear-gradient(180deg, rgba(42,26,27,0.55) 0%, rgba(42,26,27,0.55) 100%);
     pointer-events:none;
   }
 }
@@ -294,9 +294,9 @@ header{
 /* === Trust Strip (under hero — dark band for contrast) === */
 .trust-strip{
   position:relative;z-index:2;
-  background:linear-gradient(180deg,#FBF7EE 0%,#F5EFE0 100%);
-  border-top:1px solid rgba(168,134,46,0.28);
-  border-bottom:1px solid rgba(168,134,46,0.28);
+  background:linear-gradient(180deg,#FDF9F7 0%,#F6EAE6 100%);
+  border-top:1px solid rgba(142,97,105,0.28);
+  border-bottom:1px solid rgba(142,97,105,0.28);
   padding:42px 24px;
 }
 .trust-grid{
@@ -304,8 +304,8 @@ header{
   display:grid;grid-template-columns:repeat(4,1fr);gap:0;
 }
 .trust-item{
-  text-align:center;padding:6px 22px;
-  border-right:1px solid rgba(168,134,46,0.22);
+  text-align:center;padding:22px 22px;
+  border-right:1px solid rgba(142,97,105,0.22);
 }
 .trust-item:last-child{border-right:none}
 .trust-icon{
@@ -325,8 +325,8 @@ header{
 }
 @media(max-width:900px){
   .trust-grid{grid-template-columns:repeat(2,1fr);gap:6px 0}
-  .trust-item{border-right:none;border-bottom:1px solid rgba(168,134,46,0.18);padding:18px}
-  .trust-item:nth-child(odd){border-right:1px solid rgba(168,134,46,0.18)}
+  .trust-item{border-right:none;border-bottom:1px solid rgba(142,97,105,0.18);padding:18px}
+  .trust-item:nth-child(odd){border-right:1px solid rgba(142,97,105,0.18)}
   .trust-item:nth-last-child(-n+2){border-bottom:none}
   .stat{padding:0 22px;min-width:120px}
   .stat-num{font-size:34px}
@@ -334,7 +334,7 @@ header{
 
 /* === Category Visual Nav (horizontal thumbnail scroll) === */
 .cat-nav-wrap{
-  background:linear-gradient(180deg,#FBF7EE 0%,#F5EFE0 100%);
+  background:linear-gradient(180deg,#FDF9F7 0%,#F6EAE6 100%);
   padding:48px 0 8px;
   position:relative;
 }
@@ -351,12 +351,12 @@ header{
   -webkit-overflow-scrolling:touch;
   padding:6px 4px 18px;
   scrollbar-width:thin;
-  scrollbar-color:rgba(168,134,46,0.4) transparent;
+  scrollbar-color:rgba(142,97,105,0.4) transparent;
 }
 .cat-nav::-webkit-scrollbar{height:4px}
 .cat-nav::-webkit-scrollbar-track{background:transparent}
 .cat-nav::-webkit-scrollbar-thumb{
-  background:rgba(168,134,46,0.4);border-radius:2px;
+  background:rgba(142,97,105,0.4);border-radius:2px;
 }
 .cat-card{
   flex:0 0 auto;
@@ -374,7 +374,7 @@ header{
   width:96px;height:96px;
   border-radius:50%;
   overflow:hidden;
-  background:#FBF7EE;
+  background:#FDF9F7;
   border:2px solid transparent;
   padding:3px;
   position:relative;
@@ -392,18 +392,18 @@ header{
   letter-spacing:2px;
 }
 .cat-card:hover .cat-thumb{
-  border-color:rgba(168,134,46,0.45);
-  box-shadow:0 12px 28px -10px rgba(168,134,46,0.4);
+  border-color:rgba(142,97,105,0.45);
+  box-shadow:0 12px 28px -10px rgba(142,97,105,0.4);
 }
 .cat-card:hover .cat-thumb img{transform:scale(1.08)}
 .cat-card.active .cat-thumb{
   border-color:var(--gold-dark);
-  box-shadow:0 0 0 1px var(--gold-dark), 0 10px 24px -8px rgba(168,134,46,0.5);
+  box-shadow:0 0 0 1px var(--gold-dark), 0 10px 24px -8px rgba(142,97,105,0.5);
 }
 .cat-card.active .cat-thumb::after{
   content:"";position:absolute;inset:0;
   border-radius:50%;
-  background:radial-gradient(circle at center,transparent 60%,rgba(168,134,46,0.08) 100%);
+  background:radial-gradient(circle at center,transparent 60%,rgba(142,97,105,0.08) 100%);
   pointer-events:none;
 }
 .cat-label{
@@ -430,8 +430,8 @@ header{
   position:absolute;top:50%;
   transform:translateY(-50%);
   width:40px;height:40px;border-radius:50%;
-  background:rgba(251,247,238,0.92);
-  border:1px solid rgba(168,134,46,0.3);
+  background:rgba(253,249,247,0.92);
+  border:1px solid rgba(142,97,105,0.3);
   color:var(--gold-dark);
   font-size:20px;line-height:1;
   cursor:pointer;
@@ -440,7 +440,7 @@ header{
   display:flex;align-items:center;justify-content:center;
   backdrop-filter:blur(8px);
   transition:all 0.25s ease;
-  box-shadow:0 4px 12px -2px rgba(61,43,31,0.12);
+  box-shadow:0 4px 12px -2px rgba(74,46,48,0.12);
 }
 .cat-nav-arrow:hover{
   background:var(--brown);color:var(--gold);
@@ -461,7 +461,7 @@ header{
   max-width:1400px;margin:0 auto;
   padding:36px 24px 32px;
   text-align:center;
-  background:linear-gradient(180deg,#F5EFE0 0%,#FBF7EE 100%);
+  background:linear-gradient(180deg,#F6EAE6 0%,#FDF9F7 100%);
 }
 .section-heading .eyebrow{
   display:inline-flex;align-items:center;gap:14px;
@@ -506,6 +506,70 @@ header{
   transform-origin: center 35%;
 }
 
+/* ====================================================================
+   FRENCH ORMOLU REFINEMENTS — ornamental borders + scroll reveal
+   ==================================================================== */
+@keyframes revealUp{
+  from{opacity:0; transform:translateY(24px);}
+  to{opacity:1; transform:translateY(0);}
+}
+@keyframes cardEnter{
+  from{opacity:0; transform:translateY(18px) scale(0.98);}
+  to{opacity:1; transform:translateY(0) scale(1);}
+}
+.reveal-section{opacity:0; transform:translateY(24px); transition:opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1);}
+.reveal-section.in-view{opacity:1; transform:translateY(0);}
+@media (prefers-reduced-motion: reduce){
+  .reveal-section{opacity:1 !important; transform:none !important; transition:none !important;}
+  .product-card{animation:none !important}
+}
+
+/* Ornamental corner motif — thin double-line frame, used on trust / why / section-heading */
+.ormolu-frame{position:relative}
+.ormolu-frame::before,.ormolu-frame::after{
+  content:"";position:absolute;width:22px;height:22px;
+  border-top:1px solid rgba(142,97,105,0.45);
+  border-left:1px solid rgba(142,97,105,0.45);
+  pointer-events:none;
+}
+.ormolu-frame::before{top:10px;left:10px}
+.ormolu-frame::after{
+  bottom:10px;right:10px;
+  border-top:none;border-left:none;
+  border-bottom:1px solid rgba(142,97,105,0.45);
+  border-right:1px solid rgba(142,97,105,0.45);
+}
+
+/* Section divider ornament — small diamond centered on a hairline */
+.section-divider{
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  max-width:200px;margin:0 auto;padding:0;
+}
+.section-divider .sd-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(142,97,105,0.5));}
+.section-divider .sd-line.right{background:linear-gradient(90deg,rgba(142,97,105,0.5),transparent);}
+.section-divider .sd-dot{width:5px;height:5px;border-radius:50%;background:var(--gold-dark);transform:rotate(45deg);}
+
+/* Product card staggered entrance (re-triggers cleanly on filter change) */
+.product-card{
+  animation: cardEnter 0.55s cubic-bezier(0.22,1,0.36,1) both;
+}
+.product-card:nth-child(1){animation-delay:0.02s}
+.product-card:nth-child(2){animation-delay:0.06s}
+.product-card:nth-child(3){animation-delay:0.10s}
+.product-card:nth-child(4){animation-delay:0.14s}
+.product-card:nth-child(5){animation-delay:0.18s}
+.product-card:nth-child(6){animation-delay:0.22s}
+.product-card:nth-child(n+7){animation-delay:0.24s}
+
+/* Soft image sheen sweep on hover — luxury boutique touch */
+.product-img-wrap::after{
+  content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.22) 45%, transparent 60%);
+  transform:translateX(-120%);
+  transition:transform 0.75s ease;
+}
+.product-card:hover .product-img-wrap::after{transform:translateX(120%)}
+
 /* Staggered fade-up for hero text blocks */
 .hero .hero-eyebrow,
 .hero .hero-arabic,
@@ -531,7 +595,7 @@ header{
   transform:translateX(-50%);
   display:flex;flex-direction:column;align-items:center;
   text-decoration:none;
-  color:#FBF7EE;
+  color:#FDF9F7;
   letter-spacing:3px;text-transform:uppercase;
   font-size:10px;font-weight:600;
   opacity:0;
@@ -548,27 +612,27 @@ header{
 }
 .hero-scroll .hs-text{
   margin-bottom:14px;
-  background:linear-gradient(180deg,#FBF7EE 0%,#E8D89E 100%);
+  background:linear-gradient(180deg,#FDF9F7 0%,#D9A8AC 100%);
   -webkit-background-clip:text;background-clip:text;
   color:transparent;
   font-family:'Inter',sans-serif;
 }
 .hero-scroll .hs-line{
   width:1px;height:48px;
-  background:linear-gradient(180deg,rgba(232,216,158,0.1) 0%,#E8D89E 100%);
+  background:linear-gradient(180deg,rgba(217,168,172,0.1) 0%,#D9A8AC 100%);
   position:relative;
   overflow:hidden;
 }
 .hero-scroll .hs-line::after{
   content:"";position:absolute;left:0;top:0;
   width:100%;height:30%;
-  background:linear-gradient(180deg,transparent 0%,#FBF7EE 100%);
+  background:linear-gradient(180deg,transparent 0%,#FDF9F7 100%);
   animation: heroScrollPulse 2.4s ease-in-out infinite;
   animation-delay: 2.6s;
 }
 .hero-scroll .hs-arrow{
   margin-top:6px;
-  font-size:14px;color:#E8D89E;
+  font-size:14px;color:#D9A8AC;
   animation: heroScrollPulse 2.4s ease-in-out infinite;
   animation-delay: 2.6s;
   display:inline-block;
@@ -598,12 +662,12 @@ header{
 /* === Filter Bar (boutique flat nav) === */
 .filter-bar{
   position:sticky;top:88px;z-index:50;
-  background:rgba(251,247,238,0.92);
+  background:rgba(253,249,247,0.92);
   backdrop-filter:saturate(140%) blur(14px);
   -webkit-backdrop-filter:saturate(140%) blur(14px);
   padding:18px 24px;
-  border-top:1px solid rgba(168,134,46,0.18);
-  border-bottom:1px solid rgba(168,134,46,0.18);
+  border-top:1px solid rgba(142,97,105,0.18);
+  border-bottom:1px solid rgba(142,97,105,0.18);
 }
 .filter-inner{
   max-width:1400px;margin:0 auto;
@@ -661,12 +725,12 @@ header{
   position:relative;width:100%;
   padding-top:118%;
   overflow:hidden;
-  background:linear-gradient(135deg,#F5EFE0 0%,#FBF7EE 100%);
+  background:linear-gradient(135deg,#F6EAE6 0%,#FDF9F7 100%);
   border-radius:2px;
   transition:box-shadow 0.4s ease;
 }
 .product-card:hover .product-img-wrap{
-  box-shadow:0 24px 50px -20px rgba(61,43,31,0.30);
+  box-shadow:0 24px 50px -20px rgba(74,46,48,0.30);
 }
 .product-img{
   position:absolute;top:0;left:0;width:100%;height:100%;
@@ -676,21 +740,21 @@ header{
 .product-card:hover .product-img{transform:scale(1.06)}
 .product-badge{
   position:absolute;top:14px;left:14px;
-  background:rgba(251,247,238,0.95);
+  background:rgba(253,249,247,0.95);
   color:var(--brown);
   padding:5px 12px;border-radius:0;
   font-size:10px;font-weight:700;
   letter-spacing:1.5px;text-transform:uppercase;
   backdrop-filter:blur(8px);
-  border:1px solid rgba(168,134,46,0.25);
+  border:1px solid rgba(142,97,105,0.25);
 }
 .sku-count-badge{
   position:absolute;top:14px;right:14px;
-  background:rgba(26,18,9,0.85);
+  background:rgba(42,26,27,0.85);
   color:var(--gold);
   padding:5px 11px;border-radius:0;
   font-size:10px;font-weight:700;letter-spacing:1px;
-  border:1px solid rgba(201,168,76,0.4);
+  border:1px solid rgba(181,130,140,0.4);
   backdrop-filter:blur(6px);
 }
 
@@ -699,8 +763,8 @@ header{
   position:absolute;left:50%;bottom:20px;
   transform:translate(-50%, 14px);
   display:inline-flex;align-items:center;gap:10px;
-  background:rgba(201,168,76,0.92);
-  color:#1A1209;
+  background:rgba(181,130,140,0.92);
+  color:#2A1A1B;
   border:1px solid rgba(255,255,255,0.4);
   padding:11px 22px;
   font-family:inherit;
@@ -710,13 +774,13 @@ header{
   opacity:0;pointer-events:none;
   backdrop-filter:blur(8px);
   -webkit-backdrop-filter:blur(8px);
-  box-shadow:0 12px 28px -10px rgba(168,134,46,0.6),
+  box-shadow:0 12px 28px -10px rgba(142,97,105,0.6),
              0 0 0 1px rgba(255,255,255,0.15) inset;
   transition:opacity 0.35s ease, transform 0.45s cubic-bezier(0.34,1.3,0.64,1), background 0.25s ease;
   white-space:nowrap;
 }
 .quick-view-btn .qv-icon{
-  font-size:13px;color:#1A1209;
+  font-size:13px;color:#2A1A1B;
   display:inline-flex;
   transition:transform 0.4s ease;
 }
@@ -725,9 +789,9 @@ header{
   transform:translate(-50%, 0);
 }
 .quick-view-btn:hover{
-  background:#1A1209;
+  background:#2A1A1B;
   color:var(--gold);
-  border-color:rgba(201,168,76,0.5);
+  border-color:rgba(181,130,140,0.5);
 }
 .quick-view-btn:hover .qv-icon{
   color:var(--gold);
@@ -738,9 +802,9 @@ header{
   .quick-view-btn{
     opacity:1;pointer-events:auto;
     transform:translate(-50%, 0);
-    background:rgba(26,18,9,0.85);
+    background:rgba(42,26,27,0.85);
     color:var(--gold);
-    border-color:rgba(201,168,76,0.4);
+    border-color:rgba(181,130,140,0.4);
     padding:9px 16px;font-size:10px;
   }
   .quick-view-btn .qv-icon{color:var(--gold)}
@@ -772,30 +836,30 @@ header{
   font-size:19px;color:var(--brown);font-weight:600;
   margin:6px 0 16px;
   padding-top:14px;
-  border-top:1px solid rgba(168,134,46,0.22);
+  border-top:1px solid rgba(142,97,105,0.22);
   letter-spacing:0.2px;
 }
 .product-actions{
   display:flex;gap:8px;margin-top:auto;
 }
 .btn-add{
-  flex:1;background:var(--brown);color:#FBF7EE;
+  flex:1;background:var(--brown);color:#FDF9F7;
   border:1px solid var(--brown);
   padding:11px 12px;border-radius:0;
   font-size:11px;font-weight:700;cursor:pointer;
   letter-spacing:1.5px;text-transform:uppercase;
   transition:all 0.3s ease;font-family:inherit;
 }
-.btn-add:hover{background:var(--gold-dark);border-color:var(--gold-dark);color:#1A1209}
-.btn-add.added{background:var(--gold);color:#1A1209;border-color:var(--gold)}
+.btn-add:hover{background:var(--gold-dark);border-color:var(--gold-dark);color:#2A1A1B}
+.btn-add.added{background:var(--gold);color:#2A1A1B;border-color:var(--gold)}
 .btn-view{
-  background:transparent;border:1px solid rgba(61,43,31,0.25);
+  background:transparent;border:1px solid rgba(74,46,48,0.25);
   color:var(--brown);padding:11px 14px;border-radius:0;
   font-size:13px;cursor:pointer;text-decoration:none;
   display:flex;align-items:center;
   transition:all 0.3s ease;
 }
-.btn-view:hover{border-color:var(--brown);color:var(--brown);background:rgba(168,134,46,0.06)}
+.btn-view:hover{border-color:var(--brown);color:var(--brown);background:rgba(142,97,105,0.06)}
 .btn-details{
   background:transparent;
   border:1px solid var(--gold-dark);
@@ -806,12 +870,12 @@ header{
   transition:all 0.3s ease;
 }
 .btn-details:hover{
-  background:var(--gold-dark);color:#FBF7EE;
+  background:var(--gold-dark);color:#FDF9F7;
 }
 
 /* === Detail Modal === */
 .detail-overlay{
-  position:fixed;inset:0;background:rgba(61,43,31,0.7);backdrop-filter:blur(8px);
+  position:fixed;inset:0;background:rgba(74,46,48,0.7);backdrop-filter:blur(8px);
   z-index:300;opacity:0;pointer-events:none;
   transition:opacity 0.3s ease;
   display:flex;align-items:center;justify-content:center;padding:20px;
@@ -827,7 +891,7 @@ header{
 .detail-header{
   position:relative;background:linear-gradient(135deg,var(--cream-dark) 0%,var(--cream) 100%);
   padding:32px 36px 28px;border-radius:20px 20px 0 0;
-  border-bottom:1px solid rgba(201,168,76,0.2);
+  border-bottom:1px solid rgba(181,130,140,0.2);
 }
 .detail-close{
   position:absolute;top:16px;right:16px;
@@ -876,14 +940,14 @@ header{
 }
 .detail-usp-text{
   font-size:15px;line-height:1.8;color:var(--brown);
-  background:linear-gradient(135deg,rgba(201,168,76,0.06),rgba(248,243,232,0.4));
+  background:linear-gradient(135deg,rgba(181,130,140,0.06),rgba(250,243,240,0.4));
   padding:18px 22px;border-radius:12px;border-left:3px solid var(--gold);
 }
 .detail-highlights{list-style:none;padding:0}
 .detail-highlights li{
   padding:10px 0;padding-left:28px;position:relative;
   font-size:14px;color:var(--brown);line-height:1.5;
-  border-bottom:1px dashed rgba(201,168,76,0.2);
+  border-bottom:1px dashed rgba(181,130,140,0.2);
 }
 .detail-highlights li:last-child{border-bottom:none}
 .detail-highlights li::before{
@@ -898,8 +962,8 @@ header{
 /* === Color Picker modal (SKU-only) === */
 .color-picker-header{position:relative}
 .color-picker-summary{
-  background:linear-gradient(180deg,#FBF7EE 0%,#F5EFE0 100%);
-  border:1px solid rgba(168,134,46,0.25);
+  background:linear-gradient(180deg,#FDF9F7 0%,#F6EAE6 100%);
+  border:1px solid rgba(142,97,105,0.25);
   border-radius:2px;
   padding:18px 22px;
   margin-bottom:18px;
@@ -907,7 +971,7 @@ header{
 .color-picker-summary .cps-row{
   display:flex;justify-content:space-between;align-items:center;
   padding:8px 0;
-  border-bottom:1px solid rgba(168,134,46,0.12);
+  border-bottom:1px solid rgba(142,97,105,0.12);
 }
 .color-picker-summary .cps-row:last-child{border-bottom:none}
 .color-picker-summary .cps-label{
@@ -923,14 +987,14 @@ header{
   text-align:center;
   margin-bottom:20px;
   padding:10px;
-  background:rgba(201,168,76,0.06);
+  background:rgba(181,130,140,0.06);
   border-left:2px solid var(--gold-dark);
   letter-spacing:0.3px;
 }
 .color-picker-hint strong{color:var(--gold-dark);font-weight:700}
 .sku-grid-picker{margin-bottom:24px}
 .detail-color-hint{
-  background:rgba(201,168,76,0.05);
+  background:rgba(181,130,140,0.05);
   border-left:2px solid var(--gold-dark);
   padding:16px 20px;
   border-radius:0 2px 2px 0;
@@ -950,7 +1014,7 @@ header{
 .btn-copy-usp{background:var(--gold);color:white}
 .btn-copy-usp:hover{background:var(--gold-dark);transform:translateY(-2px)}
 .btn-add-modal{background:var(--brown);color:var(--cream)}
-.btn-add-modal:hover{background:#2A1E15}
+.btn-add-modal:hover{background:#3D2528}
 .btn-alibaba{background:#FF6A00;color:white}
 .btn-alibaba:hover{background:#E55F00;transform:translateY(-2px)}
 @media (max-width:768px){
@@ -965,7 +1029,7 @@ header{
 .sku-grid{
   display:grid;grid-template-columns:repeat(8,1fr);gap:8px;
   background:var(--cream);padding:14px;border-radius:12px;
-  border:1px solid rgba(201,168,76,0.18);
+  border:1px solid rgba(181,130,140,0.18);
 }
 .sku-swatch{
   position:relative;aspect-ratio:1/1;border-radius:8px;overflow:hidden;
@@ -1113,7 +1177,7 @@ header{
   white-space:nowrap;transition:all 0.2s;
 }
 .sku-lightbox-add:hover{transform:translateX(-50%) translateY(-2px);box-shadow:0 10px 24px rgba(46,125,50,0.55)}
-.sku-lightbox-add.added{background:linear-gradient(135deg,var(--gold),var(--gold-dark));box-shadow:0 6px 18px rgba(201,168,76,0.4)}
+.sku-lightbox-add.added{background:linear-gradient(135deg,var(--gold),var(--gold-dark));box-shadow:0 6px 18px rgba(181,130,140,0.4)}
 @media (max-width:600px){
   .sku-lightbox-label{font-size:12px;padding:6px 18px}
   .sku-lightbox-add{font-size:13px;padding:10px 20px;bottom:-85px}
@@ -1129,7 +1193,7 @@ header{
 
 /* === Export All Docs Button === */
 .export-docs-bar{
-  background:linear-gradient(135deg,var(--brown) 0%,#2A1E15 100%);
+  background:linear-gradient(135deg,var(--brown) 0%,#3D2528 100%);
   color:var(--cream);padding:24px;border-radius:16px;
   margin:40px 0 20px;display:flex;align-items:center;
   justify-content:space-between;gap:20px;flex-wrap:wrap;
@@ -1145,11 +1209,11 @@ header{
   cursor:pointer;font-family:inherit;
   transition:all 0.25s ease;
 }
-.btn-export-docs:hover{background:var(--gold-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,0.4)}
+.btn-export-docs:hover{background:var(--gold-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(181,130,140,0.4)}
 
 /* === Quote Drawer === */
 .drawer-overlay{
-  position:fixed;inset:0;background:rgba(61,43,31,0.5);
+  position:fixed;inset:0;background:rgba(74,46,48,0.5);
   z-index:200;opacity:0;pointer-events:none;
   transition:opacity 0.3s ease;
 }
@@ -1165,7 +1229,7 @@ header{
 .drawer-header{
   padding:24px;border-bottom:1px solid var(--cream-dark);
   display:flex;justify-content:space-between;align-items:center;
-  background:linear-gradient(135deg,var(--brown) 0%,#2A1E15 100%);
+  background:linear-gradient(135deg,var(--brown) 0%,#3D2528 100%);
   color:var(--cream);
 }
 .drawer-header h3{font-family:'Playfair Display',serif;font-size:22px}
@@ -1214,18 +1278,18 @@ header{
 .quote-group{
   border:1px solid var(--cream-dark);border-radius:14px;
   margin-bottom:14px;overflow:hidden;background:#fff;
-  box-shadow:0 2px 8px rgba(61,43,31,0.04);
+  box-shadow:0 2px 8px rgba(74,46,48,0.04);
 }
 .quote-group-head{
   display:flex;gap:12px;padding:14px;align-items:center;
-  background:linear-gradient(135deg,#fffefb,var(--cream));
+  background:linear-gradient(135deg,#fffdfb,var(--cream));
   border-bottom:1px solid var(--cream-dark);
 }
 .quote-group-img{
   width:72px;height:72px;border-radius:10px;object-fit:cover;
   background:var(--cream);flex-shrink:0;
   border:2px solid var(--gold);
-  box-shadow:0 3px 10px rgba(201,168,76,0.18);
+  box-shadow:0 3px 10px rgba(181,130,140,0.18);
 }
 .quote-group-info{flex:1;min-width:0}
 .quote-group-name{
@@ -1236,7 +1300,7 @@ header{
 .quote-group-meta{font-size:11px;color:var(--brown-light);margin-bottom:5px}
 .quote-group-summary{
   font-size:12px;color:var(--gold-dark);font-weight:500;
-  background:rgba(201,168,76,0.1);padding:4px 10px;border-radius:8px;
+  background:rgba(181,130,140,0.1);padding:4px 10px;border-radius:8px;
   display:inline-block;
 }
 .quote-group-summary strong{color:var(--brown);font-weight:700}
@@ -1249,7 +1313,7 @@ header{
 }
 .quote-group-remove-all:hover{background:rgba(196,68,68,0.12)}
 
-.quote-variants{padding:6px 12px 10px;background:#fafaf6}
+.quote-variants{padding:6px 12px 10px;background:#f9f2f0}
 .variant-row{
   display:flex;gap:10px;padding:10px 6px;align-items:center;
   border-bottom:1px dashed var(--cream-dark);
@@ -1281,7 +1345,7 @@ header{
   font-size:12px;font-weight:600;font-family:inherit;
   transition:all 0.2s;
 }
-.add-more-colors:hover{background:rgba(201,168,76,0.1);border-style:solid}
+.add-more-colors:hover{background:rgba(181,130,140,0.1);border-style:solid}
 .drawer-footer{
   padding:20px 24px;border-top:1px solid var(--cream-dark);
   background:var(--cream);
@@ -1292,7 +1356,7 @@ header{
   font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;
   margin-bottom:8px;transition:all 0.3s ease;
 }
-.btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(201,168,76,0.4)}
+.btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(181,130,140,0.4)}
 .btn-secondary{
   width:100%;background:transparent;color:var(--brown);
   border:1.5px solid var(--cream-dark);padding:12px;border-radius:10px;
@@ -1301,7 +1365,7 @@ header{
 
 /* === Why Us === */
 .why-section{
-  background:linear-gradient(135deg,var(--brown) 0%,#2A1E15 100%);
+  background:linear-gradient(135deg,var(--brown) 0%,#3D2528 100%);
   color:var(--cream);padding:80px 24px;margin-top:40px;
 }
 .why-inner{max-width:1200px;margin:0 auto;text-align:center}
@@ -1309,7 +1373,7 @@ header{
   font-family:'Playfair Display',serif;font-size:36px;
   margin-bottom:16px;color:var(--gold);
 }
-.why-subtitle{color:rgba(248,243,232,0.7);margin-bottom:48px;font-size:16px}
+.why-subtitle{color:rgba(250,243,240,0.7);margin-bottom:48px;font-size:16px}
 .why-grid{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:32px;
@@ -1323,14 +1387,14 @@ header{
   font-family:'Playfair Display',serif;font-size:18px;
   margin-bottom:8px;color:var(--cream);
 }
-.why-item p{font-size:13px;color:rgba(248,243,232,0.7);line-height:1.6}
+.why-item p{font-size:13px;color:rgba(250,243,240,0.7);line-height:1.6}
 
 /* === Footer === */
 footer{
-  background:linear-gradient(180deg,#FBF7EE 0%,#F5EFE0 100%);
+  background:linear-gradient(180deg,#FDF9F7 0%,#F6EAE6 100%);
   color:var(--brown);
   padding:72px 24px 28px;
-  border-top:1px solid rgba(168,134,46,0.28);
+  border-top:1px solid rgba(142,97,105,0.28);
   position:relative;
   /* Perf: skip rendering until near viewport */
   content-visibility:auto;
@@ -1346,7 +1410,7 @@ footer::before{
   max-width:1400px;margin:0 auto 48px;
   text-align:center;
   padding-bottom:40px;
-  border-bottom:1px solid rgba(168,134,46,0.22);
+  border-bottom:1px solid rgba(142,97,105,0.22);
 }
 .footer-brand .fb-mark{
   display:inline-flex;align-items:center;gap:14px;
@@ -1395,7 +1459,7 @@ footer::before{
 }
 .footer-bottom{
   max-width:1400px;margin:0 auto;
-  border-top:1px solid rgba(168,134,46,0.2);
+  border-top:1px solid rgba(142,97,105,0.2);
   padding-top:24px;text-align:center;
   font-size:11.5px;color:var(--brown-light);
   letter-spacing:1px;
@@ -1675,24 +1739,24 @@ footer::before{
 </section>
 
 <!-- Trust Strip -->
-<section class="trust-strip">
+<section class="trust-strip reveal-section">
   <div class="trust-grid">
-    <div class="trust-item">
+    <div class="trust-item ormolu-frame">
       <div class="trust-icon">✦</div>
       <div class="trust-title">20+ Years Heritage</div>
       <div class="trust-sub">Family-owned since 2004</div>
     </div>
-    <div class="trust-item">
+    <div class="trust-item ormolu-frame">
       <div class="trust-icon">◇</div>
       <div class="trust-title">OEKO-TEX Certified</div>
       <div class="trust-sub">Eco-friendly textiles</div>
     </div>
-    <div class="trust-item">
+    <div class="trust-item ormolu-frame">
       <div class="trust-icon">◆</div>
       <div class="trust-title">Low 100-pc MOQ</div>
       <div class="trust-sub">Boutique-friendly orders</div>
     </div>
-    <div class="trust-item">
+    <div class="trust-item ormolu-frame">
       <div class="trust-icon">✧</div>
       <div class="trust-title">40+ Countries Served</div>
       <div class="trust-sub">Global wholesale logistics</div>
@@ -1701,7 +1765,7 @@ footer::before{
 </section>
 
 <!-- Category Visual Nav -->
-<div class="cat-nav-wrap">
+<div class="cat-nav-wrap reveal-section">
   <div class="cat-nav-inner">
     <button class="cat-nav-arrow cat-nav-prev" onclick="scrollCatNav(-1)" aria-label="Scroll left">‹</button>
     <div class="cat-nav" id="catNav"></div>
@@ -1710,10 +1774,11 @@ footer::before{
 </div>
 
 <!-- Section Heading -->
-<div class="section-heading">
+<div class="section-heading reveal-section">
   <div class="eyebrow"><span class="line"></span><span>2026 Collection</span><span class="line"></span></div>
   <h3>The <span class="it">Collection</span></h3>
   <p>Seven fabric families, twenty-one signature pieces — every hijab is woven, dyed and finished in our own factory in Yiwu, China.</p>
+  <div class="section-divider" style="margin-top:22px"><span class="sd-line"></span><span class="sd-dot"></span><span class="sd-line right"></span></div>
 </div>
 
 <!-- Filter Bar -->
@@ -1752,27 +1817,27 @@ footer::before{
 </div>
 
 <!-- Why Us -->
-<section class="why-section">
+<section class="why-section reveal-section">
   <div class="why-inner">
     <h3 class="why-title">Why Choose Arisava</h3>
     <p class="why-subtitle">Two decades of craftsmanship, trusted by global Muslim fashion brands</p>
     <div class="why-grid">
-      <div class="why-item">
+      <div class="why-item ormolu-frame">
         <div class="why-icon">🏭</div>
         <h4>Own Factory</h4>
         <p>Direct from our Yiwu facility — no middlemen, full quality control, competitive pricing.</p>
       </div>
-      <div class="why-item">
+      <div class="why-item ormolu-frame">
         <div class="why-icon">🌿</div>
         <h4>OEKO-TEX Certified</h4>
         <p>Eco-friendly materials, safe for skin, compliant with international standards.</p>
       </div>
-      <div class="why-item">
+      <div class="why-item ormolu-frame">
         <div class="why-icon">🎨</div>
         <h4>OEM / ODM</h4>
         <p>Custom colors, prints, packaging, private labels. Bring your brand to life.</p>
       </div>
-      <div class="why-item">
+      <div class="why-item ormolu-frame">
         <div class="why-icon">🚚</div>
         <h4>Fast Delivery</h4>
         <p>15-25 days production. Worldwide shipping via sea, air, or express courier.</p>
@@ -12754,7 +12819,7 @@ function renderProducts(){
     return `
     <div class="product-card" id="product-card-${id}" data-product-id="${id}">
       <div class="product-img-wrap">
-        <img class="product-img" src="${p.image}" alt="${p.name}" loading="${i<4?'eager':'lazy'}" decoding="async" fetchpriority="${i<4?'high':'auto'}" width="500" height="590" onerror="this.style.background='linear-gradient(135deg,#EDE4CE,#C9A84C)';this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect fill=%22%23EDE4CE%22 width=%22100%22 height=%22100%22/%3E%3Ctext x=%2250%22 y=%2255%22 text-anchor=%22middle%22 fill=%22%23C9A84C%22 font-family=%22serif%22 font-size=%2220%22%3EHijab%3C/text%3E%3C/svg%3E'">
+        <img class="product-img" src="${p.image}" alt="${p.name}" loading="${i<4?'eager':'lazy'}" decoding="async" fetchpriority="${i<4?'high':'auto'}" width="500" height="590" onerror="this.style.background='linear-gradient(135deg,#F3E4DF,#B5828C)';this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect fill=%22%23F3E4DF%22 width=%22100%22 height=%22100%22/%3E%3Ctext x=%2250%22 y=%2255%22 text-anchor=%22middle%22 fill=%22%23B5828C%22 font-family=%22serif%22 font-size=%2220%22%3EHijab%3C/text%3E%3C/svg%3E'">
         <span class="product-badge">${p.category}</span>
         ${hasSku ? `<span class="sku-count-badge" title="${p.skuColors.length} colors available">🎨 ${p.skuColors.length} colors</span>` : ''}
         <button class="quick-view-btn" onclick="event.stopPropagation();openDetails(${id})" aria-label="Quick view">
@@ -13667,23 +13732,23 @@ function exportAllUSPDoc(){
   let html = `<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
 <head><meta charset="utf-8"><title>Arisava Hijab USP Catalog</title>
 <style>
-body{font-family:Georgia,serif;color:#3D2B1F;line-height:1.7;max-width:780px;margin:40px auto;padding:20px}
-h1{color:#C9A84C;border-bottom:3px solid #C9A84C;padding-bottom:12px;font-size:28px}
-h2{color:#3D2B1F;margin-top:36px;padding-bottom:6px;border-bottom:1px solid #EDE4CE;font-size:22px}
-h3{color:#A8862E;margin-top:24px;font-size:17px}
-.product{page-break-inside:avoid;margin-bottom:36px;padding:20px;border:1px solid #EDE4CE;border-radius:8px;background:#FBF8F1}
-.meta{font-size:13px;color:#6B4F3F;margin:8px 0}
-.meta b{color:#3D2B1F}
-.usp{background:#FFF;padding:14px;border-left:3px solid #C9A84C;margin:12px 0;font-style:italic}
+body{font-family:Georgia,serif;color:#4A2E30;line-height:1.7;max-width:780px;margin:40px auto;padding:20px}
+h1{color:#B5828C;border-bottom:3px solid #B5828C;padding-bottom:12px;font-size:28px}
+h2{color:#4A2E30;margin-top:36px;padding-bottom:6px;border-bottom:1px solid #F3E4DF;font-size:22px}
+h3{color:#8E6169;margin-top:24px;font-size:17px}
+.product{page-break-inside:avoid;margin-bottom:36px;padding:20px;border:1px solid #F3E4DF;border-radius:8px;background:#FBF6F4}
+.meta{font-size:13px;color:#7A5458;margin:8px 0}
+.meta b{color:#4A2E30}
+.usp{background:#FFF;padding:14px;border-left:3px solid #B5828C;margin:12px 0;font-style:italic}
 ul{padding-left:22px}
 li{margin:6px 0}
 .tags{margin:8px 0}
-.tag{display:inline-block;background:#EDE4CE;color:#3D2B1F;padding:3px 10px;border-radius:10px;margin:2px;font-size:12px}
-.footer{margin-top:40px;padding-top:20px;border-top:1px solid #EDE4CE;text-align:center;color:#6B4F3F;font-size:12px}
+.tag{display:inline-block;background:#F3E4DF;color:#4A2E30;padding:3px 10px;border-radius:10px;margin:2px;font-size:12px}
+.footer{margin-top:40px;padding-top:20px;border-top:1px solid #F3E4DF;text-align:center;color:#7A5458;font-size:12px}
 </style></head><body>
 <h1>Arisava Factory Co., Ltd.</h1>
-<h2 style="border:none;margin-top:0;color:#6B4F3F;font-weight:normal">Premium Hijab USP Catalog — ${dateStr}</h2>
-<p style="font-size:13px;color:#6B4F3F">20+ Years Manufacturer · OEM/ODM Welcome<br><b>Email:</b> arisavahijab@arisava.com &nbsp;|&nbsp; <b>WhatsApp:</b> +86 136 8688 2217</p>`;
+<h2 style="border:none;margin-top:0;color:#7A5458;font-weight:normal">Premium Hijab USP Catalog — ${dateStr}</h2>
+<p style="font-size:13px;color:#7A5458">20+ Years Manufacturer · OEM/ODM Welcome<br><b>Email:</b> arisavahijab@arisava.com &nbsp;|&nbsp; <b>WhatsApp:</b> +86 136 8688 2217</p>`;
 
   const byCategory = {};
   products.forEach(p => {(byCategory[p.category] = byCategory[p.category] || []).push(p);});
@@ -13693,7 +13758,7 @@ li{margin:6px 0}
     byCategory[cat].forEach(p => {
       html += `<div class="product">
         <h3>${p.headline}</h3>
-        <p style="font-size:13px;color:#6B4F3F;margin:4px 0 10px"><b>Product Title:</b> ${p.name}</p>
+        <p style="font-size:13px;color:#7A5458;margin:4px 0 10px"><b>Product Title:</b> ${p.name}</p>
         <div class="meta"><b>Material:</b> ${p.material} &nbsp;|&nbsp; <b>MOQ:</b> ${p.moq} &nbsp;|&nbsp; <b>FOB Price:</b> ${p.price}</div>
         <div class="usp">${p.usp}</div>
         <p><b>Key Highlights:</b></p>
@@ -13768,6 +13833,25 @@ renderCatNav();
 renderProducts();
 updateBadge();
 
+// Scroll-triggered reveal for major sections (trust strip, cat nav, headings, why-us)
+(function(){
+  const targets = document.querySelectorAll('.reveal-section');
+  if(!targets.length) return;
+  if(!('IntersectionObserver' in window)){
+    targets.forEach(el => el.classList.add('in-view'));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('in-view');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  targets.forEach(el => io.observe(el));
+})();
+
 /* === Tap bounce feedback on SKU add-buttons ===
  * Event delegation so we don't need to modify every onclick.
  * Uses pointerdown for instant feedback (before click fires) so the
@@ -13788,12 +13872,4 @@ updateBadge();
 })();
 </script>
 </body>
-</html>
-body>
-</html>
-
-</script>
-</body>
-</html>
-body>
 </html>
